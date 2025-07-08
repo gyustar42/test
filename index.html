@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Auto Music</title>
+</head>
+<body>
+  <audio id="bgm" autoplay loop muted style="display:none;">
+    <source src="https://github.com/gyustar42/test/blob/main/music.mp3?raw=true" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('bgm');
+      audio.play().catch(() => {});
+      document.body.addEventListener('click', () => {
+        audio.muted = false;
+      }, { once: true });
+    });
+  </script>
+
+  <h1 style="text-align:center;">자동 재생 테스트 페이지 🎵</h1>
+</body>
+</html>
